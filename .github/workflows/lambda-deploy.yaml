@@ -19,7 +19,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
-          python-version: '3.12
+          python-version: '3.12'
 
       - name: Install dependencies # Install the dependencies specified in the requirements.txt file
         run: |
@@ -31,7 +31,7 @@ jobs:
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: us-east-2
+          aws-region: us-east-1
 
       - name: Deploy Lambda function #zip lambda directory and update lambda function 
         run: |
