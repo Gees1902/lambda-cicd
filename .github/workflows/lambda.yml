@@ -6,7 +6,7 @@ on:
     branches:
       - main
     paths:
-      - 'lambda/' # Trigger the workflow only when files in the lambda directory are changed
+      - 'lambda/**' # Trigger the workflow only when files in the lambda directory are changed
 
 
 jobs:
