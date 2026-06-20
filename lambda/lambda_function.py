@@ -6,3 +6,5 @@ def lambda_handler(event, context):
         'body': json.dumps('Hello from our CICD github actions workflow vs code')
     }
 # workflow test
+
+# trigger zip fix
