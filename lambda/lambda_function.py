@@ -5,3 +5,4 @@ def lambda_handler(event, context):
         'statusCode': 200,
         'body': json.dumps('Hello from our CICD github actions workflow vs code')
     }
+# workflow test
