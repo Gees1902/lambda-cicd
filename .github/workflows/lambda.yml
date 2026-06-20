@@ -18,7 +18,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: '3.12'
+        python-version: '3.12' # Specify the Python version to use
 
     - name: Install dependencies # Install the dependencies specified in the requirements.txt file
       run: |
