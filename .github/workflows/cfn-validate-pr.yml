@@ -5,6 +5,11 @@ on:
   pull_request:
     paths:
       - 'cloudformation/**'
+  push:
+    branches:
+      - main
+    paths:
+      - 'cloudformation/**'
 
 permissions:
   pull-requests: write
