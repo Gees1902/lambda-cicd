@@ -1,0 +1,27 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: 'CloudFormation template to create an S3 bucket for CICD PR pipeline'
+
+Parameters:
+  Environment:
+     Type: String
+     Description: 'The environment for which the S3 bucket is being created (e.g., dev, staging, prod, test
+     Default: 'test'
+     AllowedValues:
+       - dev
+       - staging
+       - prod
+       - test
+
+  Resource:
+    MyS3Bucket:
+      Type: 'AWS::S3::Bucket'
+      Properties:
+        BucketName: !Sub '${AWS::StackName}-${Environment}-bucket'
+      Tag:s:
+        - Key: 'Environment'
+          Value: !Ref Environment
+       
+  Outputs:
+    S3BucketName:
+      Description: 'The name of the S3 bucket created for CICD PR pipeline'
+      Value: !Ref MyS3Bucket
