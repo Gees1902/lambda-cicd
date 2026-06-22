@@ -1,173 +1,153 @@
-# lambda-cicd
-Lambda Continuous Integration Continuous  Delivery  Continuous Deployment
-
-# AWS Lambda CI/CD Pipeline with GitHub Actions
+# AWS CI/CD Automation Portfolio Project
 
 ## Project Overview
 
-This project demonstrates how to automate AWS Lambda deployments using GitHub Actions and AWS CLI. The goal is to eliminate manual deployments and implement a secure, repeatable CI/CD process that automatically updates a Lambda function whenever code changes are pushed to GitHub.
+This project demonstrates the implementation of CI/CD automation using GitHub Actions and AWS services. The project was completed in two phases:
 
-This project helped me gain hands-on experience with serverless computing, GitHub Actions workflows, AWS IAM permissions, and secure deployment automation.
-
----
-
-## Project Objectives
-
-* Create an AWS Lambda function using Python.
-* Store Lambda source code in GitHub.
-* Build a GitHub Actions workflow for automated deployments.
-* Configure secure AWS authentication using GitHub Secrets.
-* Automatically package and deploy Lambda code after commits are pushed to the repository.
-* Gain practical experience with CI/CD and DevSecOps concepts.
+1. AWS Lambda CI/CD Deployment
+2. AWS CloudFormation Validation Pipeline
 
 ---
 
-## Technologies Used
+## Phase 1: AWS Lambda CI/CD Deployment
+
+### Objective
+
+Build a GitHub Actions workflow that automatically deploys AWS Lambda code whenever changes are pushed to the repository.
+
+### Technologies Used
 
 * AWS Lambda
-* GitHub
+* Python 3.12
 * GitHub Actions
 * AWS CLI
-* Python
-* IAM
 * YAML
 
+### Workflow
+
+1. Developer pushes code to GitHub.
+2. GitHub Actions workflow is triggered.
+3. Dependencies are installed.
+4. AWS credentials are configured.
+5. Lambda package is created.
+6. Lambda function is updated automatically.
+
+### Key Skills Demonstrated
+
+* Serverless Computing
+* CI/CD Automation
+* GitHub Actions
+* AWS Lambda Deployment
+* Python Development
+
+### Challenges Encountered
+
+* Workflow file placement issues
+* YAML syntax errors
+* Python installation and configuration
+* GitHub Actions trigger configuration
+
+### Outcome
+
+✅ Successfully automated Lambda deployment using GitHub Actions.
+
 ---
 
-## Project Structure
+## Phase 2: AWS CloudFormation Validation Pipeline
+
+### Objective
+
+Implement a GitHub Actions workflow to automatically validate CloudFormation templates before deployment.
+
+### Technologies Used
+
+* AWS CloudFormation
+* GitHub Actions
+* AWS CLI
+* YAML
+
+### Workflow
+
+1. CloudFormation template is committed to GitHub.
+2. GitHub Actions workflow is triggered.
+3. AWS credentials are configured.
+4. CloudFormation template is validated automatically.
+5. Validation results are displayed in GitHub Actions.
+
+### Key Skills Demonstrated
+
+* Infrastructure as Code (IaC)
+* CloudFormation Template Development
+* Automated Validation
+* CI/CD Pipeline Troubleshooting
+
+### Challenges Encountered
+
+* Incorrect workflow locations
+* Missing workflow triggers
+* CloudFormation validation failures
+* Invalid template characters
+* Repository structure issues
+
+### Outcome
+
+✅ Successfully validated CloudFormation templates through GitHub Actions.
+
+---
+
+## Repository Structure
 
 ```text
-lambda-cicd/
+lambda-cicd
 │
-├── lambda/
+├── README.md
+│
+├── cloudformation
+│   └── s3-bucket.yml
+│
+├── lambda
 │   ├── lambda_function.py
-│   ├── requirements.txt
-│   └── .github/
-│       └── workflows/
-│           └── lambda-deploy.yaml
+│   └── requirements.txt
+│
+└── .github
+    └── workflows
+        ├── lambda.yml
+        └── cfn-validate-pr.yml
 ```
 
----
+## Overall Results
 
-## CI/CD Workflow
+✅ Automated AWS Lambda deployments
 
-1. updates Lambda code.
-2. Code is committed and pushed to GitHub.
-3. GitHub Actions automatically triggers the workflow.
-4. Dependencies are installed.
-5. AWS credentials are securely loaded from GitHub Secrets.
-6. Lambda package is created.
-7. AWS Lambda function is updated automatically.
-8. Deployment completes without manual intervention.
+✅ Automated CloudFormation validation
 
----
+✅ Integrated GitHub Actions with AWS
 
-## GitHub Actions Workflow
-
-The workflow is configured to:
-
-* Trigger on pushes to the main branch.
-* Install Python dependencies.
-* Configure AWS credentials securely.
-* Package Lambda code into a deployment archive.
-* Deploy updated code to AWS Lambda.
-
-This automation reduces deployment errors and ensures consistency across deployments.
-
----
-
-## Security Considerations
-
-### Secrets Management
-
-AWS credentials are stored in GitHub Secrets instead of hardcoded in source code.
-
-Examples:
-
-* AWS_ACCESS_KEY_ID
-* AWS_SECRET_ACCESS_KEY
-
-This helps prevent accidental exposure of sensitive credentials.
-
-### Least Privilege
-
-IAM permissions should be restricted to only the actions required for Lambda deployments.
-
-Examples:
-
-* lambda:UpdateFunctionCode
-* lambda:GetFunction
-* logs:CreateLogGroup
-* logs:CreateLogStream
-* logs:PutLogEvents
-
-### Version Control
-
-All changes are tracked through Git, providing:
-
-* Change history
-* Auditability
-* Rollback capability
-* Collaboration support
-
----
-
-## Benefits of CI/CD for Cloud Security
-
-Implementing CI/CD provides several security and operational advantages:
-
-* Reduces manual deployment errors.
-* Improves consistency across environments.
-* Enables rapid deployment of security fixes.
-* Creates an auditable deployment process.
-* Supports Infrastructure as Code and DevSecOps practices.
-* Increases deployment reliability.
-
----
-
-## Challenges Encountered
-
-During this project I encountered several common issues:
-
-* PowerShell does not support the Linux `touch` command.
-* Python installation and PATH configuration.
-* YAML formatting and indentation requirements.
-* GitHub Actions workflow troubleshooting.
-* AWS credential configuration.
-* Lambda deployment packaging.
-
-Resolving these issues provided valuable real-world troubleshooting experience.
-
----
+✅ Gained hands-on experience with CI/CD, Serverless Computing, and Infrastructure as Code
 
 ## Lessons Learned
 
-This project strengthened my understanding of:
+This project reinforced the importance of:
 
-* AWS Lambda
-* Serverless architecture
-* Git and GitHub workflows
-* GitHub Actions
-* CI/CD pipelines
-* IAM security best practices
-* Automated cloud deployments
-* DevSecOps principles
+* CI/CD automation
+* Infrastructure as Code
+* Cloud security best practices
+* GitHub Actions troubleshooting
+* AWS service integration
+* Systematic problem solving
 
----
+```
+```
+## Screenshots
 
-## Future Enhancements
+### GitHub Actions Success
+[Insert Screenshot]
 
-Future improvements may include:
+### AWS Lambda Function
+[Insert Screenshot]
 
-* Infrastructure as Code using Terraform or CloudFormation.
-* Automated security scanning.
-* Unit testing integration.
-* Multi-environment deployments (Dev, Test, Production).
-* AWS CodePipeline integration.
-* CloudWatch monitoring and alerting.
+### CloudFormation Validation Workflow
+[Insert Screenshot]
 
----
-
-## Conclusion
-
-This project demonstrates how modern cloud teams can automate serverless deployments using GitHub Actions and AWS Lambda. By combining version control, automation, and security best practices, organizations can deploy applications faster, more consistently, and with reduced operational risk.
+### Repository Structure
+[Insert Screenshot]
